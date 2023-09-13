@@ -1,0 +1,14 @@
+gg:
+  jte:
+    templateLocation: src/main/kotlin
+    templateSuffix: .jte
+    developmentMode: true
+
+spring:
+  view-component:
+    local-development: true
+    view-action:
+      enabled: true
+logging:
+  level:
+    root: info

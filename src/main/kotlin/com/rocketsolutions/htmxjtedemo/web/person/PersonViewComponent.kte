@@ -1,0 +1,6 @@
+@param name: String
+<div>
+  <h2>That's your name</h2>
+  <div>${name}</div>
+  <button view:action="newName">New Name</button>
+</div>
