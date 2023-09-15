@@ -3,7 +3,13 @@
 @param emailAddForm: ViewContext
 @param emailListView: ViewContext
 
-<div id="addEntry">
+<div id="addEntry" class="emailadd">
     ${emailAddForm}
     ${emailListView}
 </div>
+
+<style>
+    .emailadd {
+        min-width: 50em;
+    }
+</style>

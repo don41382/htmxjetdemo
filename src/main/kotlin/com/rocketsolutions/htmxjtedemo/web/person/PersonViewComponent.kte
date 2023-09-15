@@ -1,9 +1,0 @@
-
-@param id: String
-@param name: String
-
-<div id="person-${id}">
-  <h2>That's your name</h2>
-  <div>${name}</div>
-  <button hx-get="/personviewcomponent/newname/${id}" hx-target="#person-${id}">New Name</button>
-</div>

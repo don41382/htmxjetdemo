@@ -3,7 +3,7 @@
 @param content: ViewContext
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <title>Home</title>
     <script src="/webjars/bootstrap/5.3.1/js/bootstrap.js"></script>

@@ -1,7 +1,7 @@
 package com.rocketsolutions.htmxjtedemo.web.emailadd
 
-import com.rocketsolutions.htmxjtedemo.web.emailform.EmailAddFormViewComponent
-import com.rocketsolutions.htmxjtedemo.web.emaillist.EmailListViewComponent
+import com.rocketsolutions.htmxjtedemo.web.emailadd.emailform.EmailAddFormViewComponent
+import com.rocketsolutions.htmxjtedemo.web.emailadd.emaillist.EmailListViewComponent
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.jte.ViewContext
 

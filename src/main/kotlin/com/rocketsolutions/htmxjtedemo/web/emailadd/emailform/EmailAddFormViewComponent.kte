@@ -1,4 +1,4 @@
-@import com.rocketsolutions.htmxjtedemo.web.emaillist.EmailListViewComponent.EmailListView
+@import com.rocketsolutions.htmxjtedemo.web.emailadd.emaillist.EmailListViewComponent.EmailListView
 @import de.tschuehly.spring.viewcomponent.jte.ViewContext
 
 @param emailField: String

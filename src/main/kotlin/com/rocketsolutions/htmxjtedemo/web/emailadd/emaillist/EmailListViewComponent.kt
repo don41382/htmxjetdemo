@@ -1,4 +1,4 @@
-package com.rocketsolutions.htmxjtedemo.web.emaillist
+package com.rocketsolutions.htmxjtedemo.web.emailadd.emaillist
 
 import com.rocketsolutions.htmxjtedemo.adapter.db.EmailMemoryRepository
 import com.rocketsolutions.htmxjtedemo.application.domain.Email

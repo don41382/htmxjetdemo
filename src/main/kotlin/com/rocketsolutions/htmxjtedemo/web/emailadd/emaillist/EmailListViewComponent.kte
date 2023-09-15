@@ -1,14 +1,15 @@
 @import com.rocketsolutions.htmxjtedemo.application.domain.Email
+@import com.rocketsolutions.htmxjtedemo.web.emailadd.emailform.EmailAddFormViewComponent.Companion.ADD_REFRESH_TRIGGER
 @import kotlin.collections.List
 
 @param emails: List<Email>
 
-<div hx-post="/emailListviewcomponent/refresh" hx-trigger="every 2s">
+<div hx-post="/emailListviewcomponent/refresh" hx-trigger="${ADD_REFRESH_TRIGGER} from:body">
     <h2>All Mails</h2>
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col" style="width: 50px">ID</th>
             <th scope="col">E-Mail</th>
         </tr>
         </thead>
