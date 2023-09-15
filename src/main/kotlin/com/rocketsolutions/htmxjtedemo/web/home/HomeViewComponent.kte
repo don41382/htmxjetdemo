@@ -1,0 +1,10 @@
+<div>
+    <h1>Hello</h1>
+    <p>This is the home screen</p>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="/add">Add new entry</a>
+        </li>
+    </ul>
+</div>

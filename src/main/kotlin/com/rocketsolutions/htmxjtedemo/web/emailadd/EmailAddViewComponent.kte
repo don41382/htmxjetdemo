@@ -1,0 +1,9 @@
+@import de.tschuehly.spring.viewcomponent.jte.ViewContext
+
+@param emailAddForm: ViewContext
+@param emailListView: ViewContext
+
+<div id="addEntry">
+    ${emailAddForm}
+    ${emailListView}
+</div>

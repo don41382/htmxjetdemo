@@ -1,6 +1,6 @@
-@import com.rocketsolutions.htmxjtedemo.web.person.PersonViewComponent
+@import de.tschuehly.spring.viewcomponent.jte.ViewContext
 
-@param personview: PersonViewComponent
+@param content: ViewContext
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -13,10 +13,7 @@
 <body>
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <h1>Name!</h1>
-        <div>
-            ${personview.render("No Name")}
-        </div>
+        ${content}
     </div>
 </div>
 </body>
