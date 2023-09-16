@@ -1,7 +1,5 @@
 @param searchQuery: String
 
-
-<!-- TODO afte view:action everything has to be in single quotes, otherwise a exception comes up. Any idea? -->
 <form id="searchformviewcomponent" view:action="search" hx-swap='none' hx-trigger='keyup delay:200ms'>
     <div class="input-group mb-3">
         <input
