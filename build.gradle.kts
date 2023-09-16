@@ -44,6 +44,7 @@ dependencies {
     implementation("de.tschuehly:spring-view-component-jte:0.7.0-SNAPSHOT")
     kapt("de.tschuehly:spring-view-component-core:0.7.0-SNAPSHOT")
 
+    implementation("org.webjars.npm:hyperscript.org:0.9.11")
     implementation("org.webjars:bootstrap:5.3.1")
     implementation("org.webjars.npm:htmx.org:1.9.4")
     implementation("org.webjars:webjars-locator:0.47")

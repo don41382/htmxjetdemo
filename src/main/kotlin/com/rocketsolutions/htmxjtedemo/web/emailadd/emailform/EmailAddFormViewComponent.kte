@@ -7,22 +7,17 @@
 <form view:action="addEmail">
     <div class="input-group mb-3">
         <input
+                autofocus
+                onfocus="this.select()"
                 name="emailField"
                 value="${emailField}"
                 type="text"
                 class="form-control ${if (error != null) "is-invalid" else ""}"
                 placeholder="Add your E-Mail here ..."
                 aria-describedby="add-button validationFeedback">
-        <button type="submit" class="btn btn-outline-secondary" type="button" id="add-button">Add</button>
+        <button type="submit" class="btn btn-success" type="button" id="add-button">Add</button>
         <div id="validationFeedback" class="invalid-feedback">
             ${error}
         </div>
     </div>
-    <script>
-        document.getElementById('emailaddformviewcomponent').addEventListener('htmx:afterSwap', function (event) {
-            let field = document.querySelector('input[name="emailField"]');
-            field.focus();
-            field.select();
-        });
-    </script>
 </form>

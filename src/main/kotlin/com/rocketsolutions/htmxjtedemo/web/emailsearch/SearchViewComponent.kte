@@ -1,0 +1,17 @@
+@import de.tschuehly.spring.viewcomponent.jte.ViewContext
+
+@param searchForm: ViewContext
+@param searchList: ViewContext
+
+<div id="search" class="search">
+    ${searchForm}
+    ${searchList}
+    <a href="/">Back</a>
+</div>
+
+
+<style>
+    .search {
+        width: 80vw;
+    }
+</style>

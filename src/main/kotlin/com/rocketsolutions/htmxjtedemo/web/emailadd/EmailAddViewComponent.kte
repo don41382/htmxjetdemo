@@ -6,10 +6,11 @@
 <div id="addEntry" class="emailadd">
     ${emailAddForm}
     ${emailListView}
+    <a href="/">Back</a>
 </div>
 
 <style>
     .emailadd {
-        min-width: 50em;
+        width: 80vw;
     }
 </style>

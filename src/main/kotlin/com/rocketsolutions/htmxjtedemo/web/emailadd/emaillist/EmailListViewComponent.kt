@@ -2,9 +2,11 @@ package com.rocketsolutions.htmxjtedemo.web.emailadd.emaillist
 
 import com.rocketsolutions.htmxjtedemo.adapter.db.EmailMemoryRepository
 import com.rocketsolutions.htmxjtedemo.application.domain.Email
+import de.tschuehly.spring.viewcomponent.core.action.DeleteViewAction
 import de.tschuehly.spring.viewcomponent.core.action.PostViewAction
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.jte.ViewContext
+import org.springframework.web.bind.annotation.RequestParam
 
 @ViewComponent
 class EmailListViewComponent(
@@ -18,4 +20,10 @@ class EmailListViewComponent(
     @PostViewAction
     fun refresh() =
         render()
+
+    @DeleteViewAction
+    fun delete(@RequestParam("id") id: Int): ViewContext {
+        repository.remove(id)
+        return render()
+    }
 }

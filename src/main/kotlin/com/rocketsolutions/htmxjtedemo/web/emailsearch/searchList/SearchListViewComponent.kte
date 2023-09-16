@@ -1,0 +1,25 @@
+@import com.rocketsolutions.htmxjtedemo.application.domain.Email
+@import kotlin.collections.List
+
+@param emails: List<Email>
+
+<div id="searchlistviewcomponent" hx-get="/searchlistviewcomponent/refresh" hx-vals='js:{query: new URLSearchParams(window.location.search).get("query")}'
+     hx-trigger="refreshSearchListView from:body once delay:50ms">
+    <h2>Found Emails</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col" style="width: 50px">ID</th>
+            <th scope="col">E-Mail</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for(email in emails)
+            <tr>
+                <td>${email.id.toString()}</td>
+                <td>${email.email}</td>
+            </tr>
+        @endfor
+        </tbody>
+    </table>
+</div>

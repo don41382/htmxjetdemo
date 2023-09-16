@@ -4,7 +4,10 @@
 
     <ul class="list-group">
         <li class="list-group-item">
-            <a href="/add">Add new entry</a>
+            <a href="/add" autofocus>Add new entry</a>
+        </li>
+        <li class="list-group-item">
+            <a href="/search">Search for an entry</a>
         </li>
     </ul>
 </div>
