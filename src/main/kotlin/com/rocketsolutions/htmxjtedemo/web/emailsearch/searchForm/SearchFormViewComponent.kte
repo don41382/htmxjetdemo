@@ -23,21 +23,21 @@
         <button type="submit" class="btn btn-success" type="button" id="add-button">Search</button>
     </div>
     @for (role in Role.values())
-        <div class="form-check form-check-inline">
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
             @if (selectedRoles.contains(role))
                 <input
-                        class="form-check-input"
+                        class="btn-check" id="btncheck-${role}"
                         type="checkbox"
                         value="${role}"
                         name="roles" checked>
             @else
                 <input
-                        class="form-check-input"
+                        class="btn-check" id="btncheck-${role}"
                         type="checkbox"
                         value="${role}"
                         name="roles">
             @endif
-            <label class="form-check-label" for="inlineCheckbox1">${role}</label>
+            <label class="btn btn-outline-primary" for="btncheck-${role}">${role}</label>
         </div>
     @endfor
 </form>
