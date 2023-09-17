@@ -1,9 +1,10 @@
 package com.rocketsolutions.htmxjtedemo.web
 
+import com.rocketsolutions.htmxjtedemo.application.domain.Role
 import com.rocketsolutions.htmxjtedemo.web.emailadd.EmailAddViewComponent
+import com.rocketsolutions.htmxjtedemo.web.emailsearch.SearchViewComponent
 import com.rocketsolutions.htmxjtedemo.web.home.HomeViewComponent
 import com.rocketsolutions.htmxjtedemo.web.layout.LayoutViewComponent
-import com.rocketsolutions.htmxjtedemo.web.emailsearch.SearchViewComponent
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -27,7 +28,11 @@ class RouterController(
     }
 
     @GetMapping("/search")
-    fun search(@RequestParam("query") query: String?): LayoutViewComponent.LayoutView {
-        return layout.render(search.render(query.orEmpty()))
+    fun search(
+        @RequestParam("query") query: String?,
+        @RequestParam("roles") roles: List<Role>,
+    ): LayoutViewComponent.LayoutView {
+        println("roles: $roles")
+        return layout.render(search.render(query.orEmpty(), roles))
     }
 }

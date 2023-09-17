@@ -1,5 +1,7 @@
 package com.rocketsolutions.htmxjtedemo.web.emailsearch.searchForm
 
+import com.rocketsolutions.htmxjtedemo.application.domain.Role
+import com.rocketsolutions.htmxjtedemo.application.domain.RoleConvert.toRoles
 import de.tschuehly.spring.viewcomponent.core.action.PostViewAction
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.jte.ViewContext
@@ -8,16 +10,17 @@ import jakarta.servlet.http.HttpServletResponse
 @ViewComponent
 class SearchFormViewComponent {
 
-    data class SearchFormView(val searchQuery: String) : ViewContext
+    data class SearchFormView(val query: String, val selectedRoles: List<Role>) : ViewContext
 
-    fun render(query: String): ViewContext =
-        SearchFormView(query)
+    fun render(query: String, roles: List<Role>): ViewContext =
+        SearchFormView(query, roles)
 
     @PostViewAction
-    fun search(searchQuery: String, response: HttpServletResponse): ViewContext {
-        response.addHeader("hx-push-url", "/search?query=$searchQuery")
+    fun search(query: String, roles: String?, response: HttpServletResponse): ViewContext {
+        val roles = roles.toRoles()
+        response.addHeader("hx-push-url", "/search?query=$query&roles=${roles.joinToString(",")}")
         response.addHeader("HX-Trigger", "refreshSearchListView")
         // TODO why can't I return `EmptyViewContext`? Leads to an exception
-        return render(searchQuery)
+        return SearchFormView(query, roles)
     }
 }

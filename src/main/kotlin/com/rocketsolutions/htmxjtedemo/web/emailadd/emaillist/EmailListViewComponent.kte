@@ -12,7 +12,8 @@
         <tr>
             <th scope="col" style="width: 50px">ID</th>
             <th scope="col">E-Mail</th>
-            <th scope="col">Remove</th>
+            <th scope="col">Role</th>
+            <th scope="col" style="text-align: right;">Remove</th>
         </tr>
         </thead>
         <tbody>
@@ -20,7 +21,8 @@
             <tr>
                 <td>${email.id.toString()}</td>
                 <td>${email.email}</td>
-                <td>
+                <td>${email.role}</td>
+                <td style="text-align: right;">
                     <button
                             hx-delete="/emailListviewcomponent/delete?id=${email.id}"
                             hx-target="#emailListviewcomponent"

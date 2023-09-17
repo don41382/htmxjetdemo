@@ -6,6 +6,5 @@ import de.tschuehly.spring.viewcomponent.jte.ViewContext
 @ViewComponent
 class LayoutViewComponent {
     fun render(content: ViewContext) = LayoutView(content)
-
     data class LayoutView(val content: ViewContext) : ViewContext
 }
