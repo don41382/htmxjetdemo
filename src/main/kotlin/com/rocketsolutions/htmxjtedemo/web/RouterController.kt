@@ -30,9 +30,8 @@ class RouterController(
     @GetMapping("/search")
     fun search(
         @RequestParam("query") query: String?,
-        @RequestParam("roles") roles: List<Role>,
+        @RequestParam("roles", defaultValue = "") roles: List<Role>,
     ): LayoutViewComponent.LayoutView {
-        println("roles: $roles")
         return layout.render(search.render(query.orEmpty(), roles))
     }
 }

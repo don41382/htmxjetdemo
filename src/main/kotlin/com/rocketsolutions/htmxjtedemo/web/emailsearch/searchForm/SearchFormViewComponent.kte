@@ -5,14 +5,18 @@
 @param query: String
 @param selectedRoles: List<Role>
 
-<form id="searchformviewcomponent" hx-post="/searchformviewcomponent/search" hx-swap='none' class='pb-2'>
+<form id="searchformviewcomponent"
+      hx-post="/searchformviewcomponent/search"
+      hx-trigger="keyup delay:100ms from:input[type='search'], change from:input[type='checkbox'], submit"
+      hx-swap='none'
+      class='pb-2'>
     <h2>Search</h2>
     <div class="input-group mb-3">
         <input
                 autofocus
                 name="query"
                 value="${query}"
-                type="text"
+                type="search"
                 class="form-control"
                 placeholder="Search for ..."
                 aria-describedby="add-button validationFeedback">
@@ -21,9 +25,17 @@
     @for (role in Role.values())
         <div class="form-check form-check-inline">
             @if (selectedRoles.contains(role))
-                <input class="form-check-input" type="checkbox" value="${role}" name="roles" checked>
+                <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="${role}"
+                        name="roles" checked>
             @else
-                <input class="form-check-input" type="checkbox" value="${role}" name="roles">
+                <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="${role}"
+                        name="roles">
             @endif
             <label class="form-check-label" for="inlineCheckbox1">${role}</label>
         </div>
