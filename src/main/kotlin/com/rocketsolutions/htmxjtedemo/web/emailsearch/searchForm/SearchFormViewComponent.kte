@@ -1,5 +1,4 @@
 @import com.rocketsolutions.htmxjtedemo.application.domain.Role
-@import kotlin.Pair
 @import kotlin.collections.List
 
 @param query: String
@@ -7,9 +6,12 @@
 
 <form id="searchformviewcomponent"
       hx-post="/searchformviewcomponent/search"
-      hx-trigger="keyup delay:100ms from:input[type='search'], change from:input[type='checkbox'], submit"
+      hx-trigger="
+        keyup delay:100ms from:input[type='search'],
+        change from:input[type='checkbox'],
+        submit"
       hx-swap='none'
-      class='pb-2'>
+      class='pb-4'>
     <h2>Search</h2>
     <div class="input-group mb-3">
         <input
@@ -18,25 +20,16 @@
                 value="${query}"
                 type="search"
                 class="form-control"
-                placeholder="Search for ..."
-                aria-describedby="add-button validationFeedback">
+                placeholder="Search for ...">
         <button type="submit" class="btn btn-success" type="button" id="add-button">Search</button>
     </div>
     @for (role in Role.values())
         <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-            @if (selectedRoles.contains(role))
-                <input
-                        class="btn-check" id="btncheck-${role}"
-                        type="checkbox"
-                        value="${role}"
-                        name="roles" checked>
-            @else
-                <input
-                        class="btn-check" id="btncheck-${role}"
-                        type="checkbox"
-                        value="${role}"
-                        name="roles">
-            @endif
+            <input
+                    class="btn-check" id="btncheck-${role}"
+                    type="checkbox"
+                    value="${role}"
+                    name="roles" checked="${selectedRoles.contains(role)}">
             <label class="btn btn-outline-primary" for="btncheck-${role}">${role}</label>
         </div>
     @endfor

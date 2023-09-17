@@ -23,6 +23,7 @@ class EmailMemoryRepository {
         Email(id++, "satya.nadella@microsoft.com", Role.Engineer),
         Email(id++, "jack.dorsey@twitter.com", Role.Engineer),
         Email(id++, "brian.chesky@airbnb.com", Role.Engineer),
+        Email(id++, "eckhardt@rocket-solutions.de", Role.Engineer),
     )
 
     fun add(email: String) {

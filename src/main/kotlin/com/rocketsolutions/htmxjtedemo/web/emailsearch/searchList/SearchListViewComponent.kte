@@ -1,4 +1,5 @@
 @import com.rocketsolutions.htmxjtedemo.application.domain.Email
+@import com.rocketsolutions.htmxjtedemo.web.emailsearch.searchForm.SearchFormViewComponent.Companion.TRIGGER_REFRESH_SEARCH
 @import kotlin.collections.List
 
 @param emails: List<Email>
@@ -7,7 +8,7 @@
 <div id="searchlistviewcomponent"
      hx-get="/searchlistviewcomponent/refresh"
      hx-vals='js:{query: new URLSearchParams(window.location.search).get("query"), roles: new URLSearchParams(window.location.search).get("roles")}'
-     hx-trigger="refreshSearchListView from:body once delay:50ms">
+     hx-trigger="${TRIGGER_REFRESH_SEARCH} from:body once delay:50ms">
     @if (emails.isNotEmpty())
         <h3>Found Emails</h3>
         <table class="table">
@@ -29,6 +30,7 @@
             </tbody>
         </table>
     @else
-        <h3>No Matching E-Mails</h3>
+        <h3>No Results</h3>
+        <p>Sorry, I could not find any results.</p>
     @endif
 </div>

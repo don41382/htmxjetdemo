@@ -19,8 +19,12 @@ class SearchFormViewComponent {
     fun search(query: String, roles: String?, response: HttpServletResponse): ViewContext {
         val roles = roles.toRoles()
         response.addHeader("hx-push-url", "/search?query=$query&roles=${roles.joinToString(",")}")
-        response.addHeader("HX-Trigger", "refreshSearchListView")
+        response.addHeader("HX-Trigger", TRIGGER_REFRESH_SEARCH)
         // TODO why can't I return `EmptyViewContext`? Leads to an exception
         return SearchFormView(query, roles)
+    }
+
+    companion object {
+        const val TRIGGER_REFRESH_SEARCH = "refreshSearchListView"
     }
 }
